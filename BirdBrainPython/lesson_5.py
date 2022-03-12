@@ -62,12 +62,50 @@ def exercise7():
     bird.stopAll()
 
 def exercise8():
-    while bird.getDistance() < 27:
+    while bird.getDistance() < 80:
         bird.setBeak(100,0,0)
         bird.setTail("all",100,0,0)
     bird.setBeak(0,0,100)
     bird.setTail(1,0,100,0)
     bird.setTail(2,100,0,100)
+    bird.setTail(3,100,0,0)
+    bird.setTail(4,80,80,50)
+    bird.setTurn('R',2160,90)
+    bird.stopAll()
+
+def exercise9():
+    while not bird.getButton('A'):
+        bird.setTail(1,0,100,0)
+        time.sleep(0.1)
+        bird.setTail(3,0,100,0)
+        time.sleep(0.1)
+        bird.stopAll()
+        time.sleep(0.1)
+
+def exercise10():
+    while not bird.getButton('B'):
+        bird.setMove('F',50,50)
+        bird.setMove('B',50,50)
+    bird.stop()
+
+def exercise11():
+    bird.setBeak(100,0,0)
+    while bird.getDistance() < 30:
+        pass
+    bird.setBeak(0,100,0)
+    time.sleep(1)
+    bird.stopAll()
+
+def exercise12():
+    while not bird.getButton('A'):
+        if (bird.getDistance() > 65):
+            bird.setMove('F',50,60)
+        elif (bird.getDistance() <=65):
+            bird.setMove('B',50,60)
+            bird.setTurn('R',90,60)
+    bird.stop()
+
+
 
 #exercise1()
 #exercise2()
@@ -77,4 +115,10 @@ def exercise8():
 #exercise5()
 #exercise6()
 #exercise7()
-exercise8()
+#exercise8()
+#exercise9()
+#exercise10()
+#exercise11()
+exercise12()
+
+
