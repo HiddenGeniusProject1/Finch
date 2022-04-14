@@ -1,5 +1,6 @@
 from BirdBrain import Finch
 from time import sleep
+import math
 
 bird = Finch()
 
@@ -61,8 +62,30 @@ def exercise4():
         bird.setBeak(x,y,z)
     bird.stopAll()
 
+def exercise5():
+    userResponse = input("Input the amount of seconds: ")
+    seconds = int(userResponse)
+    accelX, accelY, accelZ = bird.getAcceleration()
+    x = accelX
+    y = accelY
+    z = accelZ
+    a = math.sqrt(x*x + y*y + z*z)
+    while not a > 20:
+        sleep(seconds)
+        bird.setBeak(100,0,0)
+        bird.setTail(1,100,0,0)
+        bird.setTail(2,0,0,100)
+        bird.setTail(3,100,0,0)
+        bird.setTail(4,0,0,100)
+        bird.setMove('F',40,50)
+        bird.setMove('B',40,50)
+        bird.setTurn('R',360,50)
+    bird.stopAll()
+        
+
 #exercise1()
 #exercise2()
 #exercise3()
-exercise4()
+#exercise4()
+exercise5()
         
