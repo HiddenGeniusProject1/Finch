@@ -13,4 +13,6 @@ def exercise1():
         bird.setTurn('L',60,50)
     bird.stop()
 
+def exercise2()
+
 exercise1()
