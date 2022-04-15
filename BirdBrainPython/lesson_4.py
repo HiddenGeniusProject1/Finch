@@ -3,11 +3,13 @@ import time
 
 bird = Finch()
 
+#Sets the motors of the finch and turns fully around
 def exercise1():
     bird.setMotors(100,-100)
     time.sleep(1)
     bird.stop()
 
+#Asks the users for the value of the the left and right motors
 def exercise2():
     userResponseLeft = input("On a scale of -100 to 100, what should the speed of the left wheel be?: ")
     userResponseRight = input("On a scale of -100 to 100, what should the speed of the right wheel be?: ")
@@ -17,6 +19,7 @@ def exercise2():
     time.sleep(2)
     bird.stop()
 
+#Makes a figure-8
 def exercise3():
     bird.setMotors(58,-58)
     time.sleep(1)
@@ -26,6 +29,7 @@ def exercise3():
     time.sleep(1)
     bird.stop()
 
+#Ask the user to enter the first initial of a color, making it green if they put g
 def exercise4():
     color = input("Please enter a letter: ")
     if (color == 'g'):
@@ -35,6 +39,7 @@ def exercise4():
     time.sleep(1)
     bird.stopAll()
 
+#Asks the user to pick a direction for the finch
 def exercise5():
     direction = input("Pick a direction (r or l): ")
     if (direction == 'r'):
@@ -42,6 +47,7 @@ def exercise5():
     else:
         bird.setTurn('L',90,80)
         
+#Asks the user to enter a slow speed
 def exercise6():
     userResponse = input("Please enter a speed (-50 to 50): ")
     speed = int(userResponse)
@@ -52,6 +58,7 @@ def exercise6():
     else:
         print("That speed is not a slow speed!")
 
+#Aks the user for a speed, then sets it as its motors
 def exercise7():
     userResponse = input("Please enter a speed between 0 to 50: ")
     speed = int(userResponse)
@@ -62,6 +69,7 @@ def exercise7():
     else:
         print("Error")
 
+#Asks the user for a type of dance
 def exercise8():
     dance = input("Please enter one of these dances (moon walk, salsa, or  whip and nae nae: ")
     if (dance == 'moon walk'):
