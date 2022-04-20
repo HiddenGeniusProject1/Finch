@@ -38,6 +38,7 @@ def exercise3():
         bird.setMove('F',30,40)
     bird.stop()
 
+#Has the finch navigate through a maze
 def exercise4():
     def wallFollowing():
         while bird.getDistance() > 20:
