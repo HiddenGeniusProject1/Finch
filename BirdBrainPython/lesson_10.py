@@ -1,6 +1,7 @@
 from BirdBrain import Finch
 bird = Finch()
 from time import sleep
+import random
 
 def exercise1():
     # This function makes the finch draw a square
@@ -56,9 +57,40 @@ def exercise4():
         bird.setMove('F',45,50)
         bird.print("YOUDIDIT")
     wallFollowing()
+    #Have the finch automatially move itself rather than the user manually moving it
+    #Make the finch turn 90 degrees whenever it spots an obstacle in its path
+    #Use a while loop to repeatedly have the finch move until it sees an object
+    #Create an additional function to serve in the code for the finch
+    #Have the parent function continuously going straight, sub-function is turning
+    
+    #Algorithm: To navigate through a maze
+        #While the front is clear
+            #Move forward until the front is blocked
+            #If the front is blocked
+                #Turn to the left until the front is clear and not facing in the direction where it started
+def turn():
+    bird.setTurn('L',90,50)
+def exercise4fixed():
+    while bird.getDistance() > 20:
+        bird.setMove('F',20,50)
+        if bird.getDistance() < 20:
+            turn()
+
+def exercise5():
+    def drawSquare2(size):
+        for i in range(4):
+            bird.setMove('F',size,50)
+            bird.setTurn('R',90,50)
+    for i in range(5):
+        drawSquare2(random.randint(5,20))
+
+def exercise6():
+    def blinkAll(red,green,blue):
+        bird.setBeak(red,green
 
 
 #exercise1()
 #exercise2()
 #exercise3()
-exercise4()
+#exercise4()
+exercise5()
