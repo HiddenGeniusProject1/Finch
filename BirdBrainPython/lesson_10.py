@@ -72,10 +72,10 @@ def turn():
     bird.setTurn('L',90,50)
 def exercise4fixed():
     while bird.getDistance() > 20:
-        bird.setMove('F',20,50)
-        if bird.getDistance() < 20:
-            turn()
-
+        bird.setMove('F',15,50)
+    turn()
+    
+            
 def exercise5():
     def drawSquare2(size):
         for i in range(4):
@@ -86,11 +86,12 @@ def exercise5():
 
 def exercise6():
     def blinkAll(red,green,blue):
-        bird.setBeak(red,green
+        bird.setBeak(red,green)
 
 
 #exercise1()
 #exercise2()
 #exercise3()
 #exercise4()
-exercise5()
+#exercise5()
+exercise4fixed()
