@@ -68,13 +68,30 @@ def exercise4():
             #Move forward until the front is blocked
             #If the front is blocked
                 #Turn to the left until the front is clear and not facing in the direction where it started
-def turn():
-    bird.setTurn('L',90,50)
-def exercise4fixed():
+def turn(counter):
+    while bird.getDistance() < 20:
+        bird.setTurn('L',90,50)
+    return counter + 1
+
+def exercise4fixed(counter):
+
     while bird.getDistance() > 20:
         bird.setMove('F',15,50)
-    turn()
-    
+        if bird.getDistance() < 15:
+            counter = turn(counter)
+            if counter == 2:
+                turn(counter)
+            if counter == 3:
+                turn(counter)
+                turn(counter)
+        """
+        counter = counter + 1
+        if counter == 4:
+            bird.setTurn('R',90,50)
+        counter = 0
+        if counter == 0:
+            turn()
+          """  
             
 def exercise5():
     def drawSquare2(size):
@@ -94,4 +111,5 @@ def exercise6():
 #exercise3()
 #exercise4()
 #exercise5()
-exercise4fixed()
+counter = 0
+exercise4fixed(counter)
