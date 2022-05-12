@@ -68,23 +68,28 @@ def exercise4():
             #Move forward until the front is blocked
             #If the front is blocked
                 #Turn to the left until the front is clear and not facing in the direction where it started
+
 def turn(counter):
     while bird.getDistance() < 20:
-        bird.setTurn('L',90,50)
+        bird.setTurn('R',90,50)
     return counter + 1
 
+#Fixed lesson on Exercise 4
 def exercise4fixed(counter):
 
-    while bird.getDistance() > 20:
-        bird.setMove('F',15,50)
+    while bird.getDistance() > 100:
+        bird.setMove('F',5,50)
         if bird.getDistance() < 15:
             counter = turn(counter)
-            if counter == 2:
-                turn(counter)
-            if counter == 3:
-                turn(counter)
-                turn(counter)
+            
+        #counter = counter + 1
+            print(counter)
+
         """
+        counter = counter + 1
+        if counter == 3:
+            turn()
+            turn()
         counter = counter + 1
         if counter == 4:
             bird.setTurn('R',90,50)
@@ -101,15 +106,40 @@ def exercise5():
     for i in range(5):
         drawSquare2(random.randint(5,20))
 
+#Blinks the function until Button A is pressed
 def exercise6():
     def blinkAll(red,green,blue):
-        bird.setBeak(red,green)
+        bird.setBeak(red,green,blue)
+        bird.setTail("all",red,green,blue)
+        sleep(1)
+        bird.stopAll()
+    while not bird.getButton('A'):
+        blinkAll(100,50,20)
+    bird.stopAll()
 
+#Prints the orientation and blinks the lights until the Finch is not level
+def exercise7():
+    def blinkAll(red,green,blue):
+        bird.setBeak(red,green,blue)
+        bird.setTail("all",red,green,blue)
+        sleep(1)
+        bird.stopAll()
+
+    def isLevel():
+        return bird.getOrientation()
+
+    while bird.getOrientation() == "Level":
+        print(isLevel())
+        blinkAll(100,50,20)
+    bird.stopAll()
+        
 
 #exercise1()
 #exercise2()
 #exercise3()
 #exercise4()
 #exercise5()
-counter = 0
-exercise4fixed(counter)
+#counter = 0
+#exercise4fixed(counter)
+#exercise6()
+exercise7()
