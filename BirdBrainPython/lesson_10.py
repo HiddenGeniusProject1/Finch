@@ -69,21 +69,22 @@ def exercise4():
             #If the front is blocked
                 #Turn to the left until the front is clear and not facing in the direction where it started
 
-def turn(counter):
-    while bird.getDistance() < 20:
+def turn():
         bird.setTurn('R',90,50)
-    return counter + 1
 
 #Fixed lesson on Exercise 4
-def exercise4fixed(counter):
+def exercise4fixed():
 
-    while bird.getDistance() > 100:
-        bird.setMove('F',5,50)
-        if bird.getDistance() < 15:
-            counter = turn(counter)
+    while bird.getDistance() > 24:
+        bird.setMove('F',25,50)
+        while bird.getDistance() < 24:
+            turn()
+            if bird.getDistance() < 24:
+                bird.setTurn('R',180,50)
             
+        
+         
         #counter = counter + 1
-            print(counter)
 
         """
         counter = counter + 1
@@ -139,7 +140,6 @@ def exercise7():
 #exercise3()
 #exercise4()
 #exercise5()
-#counter = 0
-#exercise4fixed(counter)
+exercise4fixed()
 #exercise6()
-exercise7()
+#exercise7()
